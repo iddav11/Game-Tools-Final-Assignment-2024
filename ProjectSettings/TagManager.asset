@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Trap
+  - Respawn1
+  - Respawn2
+  - Respawn3
+  - Respawn4
+  - RespawnF
+  - RespawnF1
+  - RespawnF2
   layers:
   - Default
   - TransparentFX
