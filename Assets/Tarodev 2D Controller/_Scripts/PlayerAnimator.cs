@@ -14,10 +14,7 @@ namespace TarodevController
 
         [Header("Settings")] [SerializeField, Range(1f, 3f)]
         private float _maxIdleSpeed = 2;
-
-        [SerializeField] private float _maxTilt = 5;
-        [SerializeField] private float _tiltSpeed = 20;
-
+        
         [Header("Particles")] [SerializeField] private ParticleSystem _jumpParticles;
         [SerializeField] private ParticleSystem _launchParticles;
         [SerializeField] private ParticleSystem _moveParticles;
@@ -62,8 +59,6 @@ namespace TarodevController
             HandleSpriteFlip();
 
             HandleIdleSpeed();
-
-            HandleCharacterTilt();
         }
 
         private void HandleSpriteFlip()
@@ -76,12 +71,6 @@ namespace TarodevController
             var inputStrength = Mathf.Abs(_player.FrameInput.x);
             _anim.SetFloat(IdleSpeedKey, Mathf.Lerp(1, _maxIdleSpeed, inputStrength));
             _moveParticles.transform.localScale = Vector3.MoveTowards(_moveParticles.transform.localScale, Vector3.one * inputStrength, 2 * Time.deltaTime);
-        }
-
-        private void HandleCharacterTilt()
-        {
-            var runningTilt = _grounded ? Quaternion.Euler(0, 0, _maxTilt * _player.FrameInput.x) : Quaternion.identity;
-            _anim.transform.up = Vector3.RotateTowards(_anim.transform.up, runningTilt * Vector2.up, _tiltSpeed * Time.deltaTime, 0f);
         }
 
         private void OnJumped()
