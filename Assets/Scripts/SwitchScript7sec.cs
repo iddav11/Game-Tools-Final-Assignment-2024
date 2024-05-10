@@ -6,7 +6,8 @@ public class SwitchScript7sec : MonoBehaviour
 {
     public ToggleVision toggleCollisionScript; 
     private bool collisionEnabled = true; 
-    
+    public float switchTime = 7f;
+
     IEnumerator ToggleEverySevenSeconds()
     {
         while (true)

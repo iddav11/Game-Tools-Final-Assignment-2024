@@ -44,13 +44,16 @@ public class Respawn : MonoBehaviour
         SceneManager.LoadScene("Level 1");
         print ("Im useful");
         }
+        
         if(collision.gameObject.CompareTag("RespawnF1"))
         {
+        SceneManager.UnloadSceneAsync("Level 1");
         SceneManager.LoadScene("Level 2");
         print ("Im useful");
         }
         if(collision.gameObject.CompareTag("RespawnF2"))
         {
+        SceneManager.UnloadSceneAsync("Level 2");
         SceneManager.LoadScene("Level 3");
         print ("Im useful");
         }
