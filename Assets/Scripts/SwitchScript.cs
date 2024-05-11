@@ -10,7 +10,7 @@ public class SwitchScript : MonoBehaviour
     public void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             collisionEnabled = !collisionEnabled;
             toggleCollisionScript.ToggleCollisionAndVisibility(collisionEnabled);

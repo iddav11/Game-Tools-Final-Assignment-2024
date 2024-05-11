@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class SwitchScriptTrigger: MonoBehaviour
 {
-    // public ToggleTriggerCollision toggleCollisionScript; 
+    public ToggleVision toggleCollisionScript; 
+    private bool collisionEnabled = true;
 
-    // void OnTriggerEnter2D(Collider2D other)
-    // {
-    //     if (other.CompareTag("Player"))
-    //     {
-    //         toggleCollisionScript.ToggleCollisionAndVisibility(!toggleCollisionScript.IsCollisionEnabled());
-    //     }
-    // }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                collisionEnabled = !collisionEnabled;
+                toggleCollisionScript.ToggleCollisionAndVisibility(collisionEnabled);
+            }
+        }
+    }
 }

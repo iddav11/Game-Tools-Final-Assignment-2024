@@ -44,7 +44,6 @@ public class Respawn : MonoBehaviour
         SceneManager.LoadScene("Level 1");
         print ("Im useful");
         }
-        
         if(collision.gameObject.CompareTag("RespawnF1"))
         {
         SceneManager.UnloadSceneAsync("Level 1");
